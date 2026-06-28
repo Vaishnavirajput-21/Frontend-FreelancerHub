@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Freelancer Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#6366f1;--primary-dark:#4f46e5;--dark:#0f172a;--gray:#64748b;--light:#f8fafc;--border:#e2e8f0;--green:#10b981;--yellow:#f59e0b}
+    body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--dark);background:var(--light)}
+    .header{background:white;height:72px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+    .nav-wrap{display:flex;justify-content:space-between;align-items:center;height:100%;max-width:1280px;margin:0 auto;padding:0 24px}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--primary),#8b5cf6);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px}
+    .logo-text{font-size:24px;font-weight:800;color:var(--dark);letter-spacing:-0.5px}
+    .logo-text span{color:var(--primary)}
+    .nav{display:flex;gap:32px;align-items:center}
+    .nav a{text-decoration:none;color:var(--gray);font-weight:600;font-size:15px;transition:.2s}
+    .nav a.active{color:var(--primary)}
+    .user-menu{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--dark);font-weight:600}
+    .user-menu img{width:40px;height:40px;border-radius:50%;border:2px solid var(--border)}
+    .dashboard{padding:40px 0}
+    .container{max-width:1280px;margin:0 auto;padding:0 24px}
+    .dash-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
+    .dash-header h1{font-size:36px;font-weight:800;letter-spacing:-1px}
+    .btn-primary{background:var(--primary);color:white;padding:12px 24px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;transition:.2s}
+    .btn-primary:hover{background:var(--primary-dark)}
+    .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-bottom:40px}
+    .stat-card{background:white;padding:28px;border-radius:20px;border:1px solid var(--border)}
+    .stat-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+    .stat-card-head h4{color:var(--gray);font-size:15px;font-weight:600}
+    .stat-icon{width:44px;height:44px;background:var(--light);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px}
+    .stat-number{font-size:36px;font-weight:800;color:var(--dark);margin-bottom:8px}
+    .stat-change{font-size:14px;font-weight:600;color:var(--green)}
+    .stat-change.down{color:#ef4444}
+    .main-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+    .dash-section{background:white;padding:32px;border-radius:20px;border:1px solid var(--border);margin-bottom:24px}
+    .dash-section h3{font-size:20px;font-weight:700;margin-bottom:24px}
+    .dash-table{width:100%;border-collapse:collapse}
+    .dash-table th{text-align:left;padding:14px;border-bottom:2px solid var(--light);color:var(--gray);font-size:14px;font-weight:600}
+    .dash-table td{padding:18px 14px;border-bottom:1px solid var(--light);font-size:15px}
+    .dash-table a{color:var(--primary);text-decoration:none;font-weight:600}
+    .badge{display:inline-block;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:700}
+    .badge-open{background:#d1fae5;color:#065f46}
+    .badge-progress{background:#fef3c7;color:#92400e}
+    .badge-done{background:#dbeafe;color:#1e40af}
+    .activity-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--light)}
+    .activity-item:last-child{border-bottom:none}
+    .activity-icon{width:40px;height:40px;background:var(--light);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .activity-content h4{font-size:15px;font-weight:600;margin-bottom:4px}
+    .activity-content p{font-size:14px;color:var(--gray)}
+    @media(max-width:1024px){.nav{display:none}.main-grid{grid-template-columns:1fr}}
+    @media(max-width:640px){.stats-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">F</div>
+        <div class="logo-text">Freelancer<span>Hub</span></div>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Browse</a>
+        <a href="#" class="active">Dashboard</a>
+        <a href="#">Messages</a>
+        <a href="#">Orders</a>
+      </nav>
+      <a href="profile.html" class="user-menu">
+        <img src="https://i.pravatar.cc/40?img=12" alt="">
+        <span>John Doe</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="dashboard">
+    <div class="container">
+      <div class="dash-header">
+        <h1>Welcome back, John 👋</h1>
+        <a href="#" class="btn-primary">+ Post New Project</a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-head">
+            <h4>Active Projects</h4>
+            <div class="stat-icon">📋</div>
+          </div>
+          <div class="stat-number">3</div>
+          <div class="stat-change">↑ 2 from last month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-head">
+            <h4>Total Spent</h4>
+            <div class="stat-icon">💰</div>
+          </div>
+          <div class="stat-number">₹48,500</div>
+          <div class="stat-change">↑ 12% this month</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-head">
+            <h4>Avg Rating</h4>
+            <div class="stat-icon">⭐</div>
+          </div>
+          <div class="stat-number">4.9</div>
+          <div class="stat-change">From 27 reviews</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-head">
+            <h4>Completed</h4>
+            <div class="stat-icon">✅</div>
+          </div>
+          <div class="stat-number">12</div>
+          <div class="stat-change down">↓ 1 from last month</div>
+        </div>
+      </div>
+
+      <div class="main-grid">
+        <div>
+          <div class="dash-section">
+            <h3>My Active Projects</h3>
+            <table class="dash-table">
+              <thead>
+                <tr><th>Project Title</th><th>Bids</th><th>Budget</th><th>Status</th><th>Action</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="service-detail.html">E-commerce Website React</a></td>
+                  <td>8</td>
+                  <td>₹25,000</td>
+                  <td><span class="badge badge-open">Open</span></td>
+                  <td><a href="#">View Bids</a></td>
+                </tr>
+                <tr>
+                  <td><a href="service-detail.html">Mobile App UI Design</a></td>
+                  <td>15</td>
+                  <td>₹12,000</td>
+                  <td><span class="badge badge-progress">In Progress</span></td>
+                  <td><a href="#">Manage</a></td>
+                </tr>
+                <tr>
+                  <td><a href="service-detail.html">Brand Logo Design</a></td>
+                  <td>6</td>
+                  <td>₹8,500</td>
+                  <td><span class="badge badge-done">Completed</span></td>
+                  <td><a href="#">Review</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <div class="dash-section">
+            <h3>Recent Activity</h3>
+            <div class="activity-item">
+              <div class="activity-icon">💬</div>
+              <div class="activity-content">
+                <h4>New message from Rajesh</h4>
+                <p>2 hours ago</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">✅</div>
+              <div class="activity-content">
+                <h4>Project marked complete</h4>
+                <p>Brand Logo Design - 1 day ago</p>
+              </div>
+            <div class="activity-item">
+              <div class="activity-icon">💰</div>
+              <div class="activity-content">
+                <h4>Payment released</h4>
+                <p>₹8,500 to Priya Sharma</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">📋</div>
+              <div class="activity-content">
+                <h4>New bid received</h4>
+                <p>E-commerce Website - 3 days ago</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
