@@ -1,49 +1,243 @@
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-  font-family:'Plus Jakarta Sans',sans-serif;
-  background:#b8bfe5;
-  color:#778ab7;
-  line-height:1.6;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:#b8bfe5;
+    color:#64748b;
+    line-height:1.5;
+    font-size:14px;
 }
-.container{max-width:1280px;margin:0 auto;padding:0 32px}
+
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+/* HEADER */
 .header{
-  background:rgba(174, 165, 242, 0.95);
-  height:72px;
-  border-bottom:1px solid #f1f2f3;
-  position:sticky;
-  top:0;
+    background:rgba(174,165,242,.95);
+    height:60px;
+    border-bottom:1px solid #ddd;
+    position:sticky;
+    top:0;
 }
-.nav-wrap{display:flex;justify-content:space-between;align-items:center;height:100%}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-icon{width:36px;height:36px;background:#6366f1;border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px}
-.logo-text{font-size:24px;font-weight:800;color:#0f172a}
-.logo-text span{color:#6366f1}
-.nav{display:flex;gap:32px}
-.nav a{text-decoration:none;color:#64748b;font-weight:600;font-size:15px}
-.auth{display:flex;gap:16px;align-items:center}
-.signin{text-decoration:none;color:#0f172a;font-weight:600;font-size:15px}
-.join{text-decoration:none;background:#6366f1;color:rgb(236, 232, 232);font-weight:700;padding:10px 22px;border-radius:12px;font-size:15px}
+
+.nav-wrap{
+    height:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+}
+
+.logo-icon{
+    width:32px;
+    height:32px;
+    background:#6366f1;
+    color:#fff;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    font-weight:700;
+}
+
+.logo-text{
+    font-size:20px;
+    font-weight:800;
+    color:#0f172a;
+}
+
+.logo-text span{
+    color:#6366f1;
+}
+
+.nav{
+    display:flex;
+    gap:22px;
+}
+
+.nav a{
+    text-decoration:none;
+    color:#64748b;
+    font-size:14px;
+    font-weight:600;
+}
+
+.auth{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.signin{
+    text-decoration:none;
+    color:#0f172a;
+    font-size:14px;
+}
+
+.join{
+    text-decoration:none;
+    background:#6366f1;
+    color:white;
+    padding:8px 16px;
+    border-radius:8px;
+    font-size:14px;
+}
+
+/* HERO */
+
 .hero{
-  padding:100px 0 120px;
-  background:linear-gradient(180deg, #93c9ed 0%, #99afed 100%);
+    padding:60px 0;
+    background:linear-gradient(180deg,#93c9ed,#99afed);
 }
-.hero-content{text-align:center;max-width:900px;margin:0 auto}
-.badge{display:inline-flex;align-items:center;gap:8px;background:#eef2ff;color:#6366f1;padding:8px 16px;border-radius:50px;font-size:14px;font-weight:600;margin-bottom:24px}
-.badge-dot{width:8px;height:8px;background:#6366f1;border-radius:50%}
-.hero-title{font-size:64px;font-weight:800;line-height:1.1;letter-spacing:-2px;margin-bottom:24px;color:#0f172a}
-.hero-subtitle{font-size:20px;color:#64748b;margin-bottom:40px;max-width:650px;margin-left:auto;margin-right:auto}
-.search-box{display:flex;max-width:700px;margin:0 auto 16px;background:white;border:2px solid #e2e8f0;border-radius:16px;padding:6px;box-shadow:0 4px 20px rgba(0,0,0,0.04)}
-.search-box input{flex:1;border:none;outline:none;padding:0 20px;font-size:16px;font-family:inherit}
-.search-box button{background:#6366f1;color:white;border:none;padding:14px 32px;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer}
-.trending{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-.trending span{color:#64748b;font-size:14px;font-weight:500}
-.trending a{background:rgb(164, 182, 240);border:1px solid #e2e8f0;color:#0f172a;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none}
-.stats{padding:60px 0;background:#f1f5f9;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
-.stat-item h3{font-size:40px;font-weight:800;color:#6366f1;margin-bottom:8px}
-.stat-item p{color:#64748b;font-size:15px;font-weight:500}
+
+.hero-content{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:#eef2ff;
+    color:#6366f1;
+    padding:6px 14px;
+    border-radius:40px;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+.badge-dot{
+    width:6px;
+    height:6px;
+    background:#6366f1;
+    border-radius:50%;
+}
+
+.hero-title{
+    font-size:42px;
+    color:#0f172a;
+    font-weight:800;
+    line-height:1.2;
+    margin-bottom:18px;
+}
+
+.hero-subtitle{
+    font-size:16px;
+    margin-bottom:30px;
+    color:#64748b;
+}
+
+.search-box{
+    display:flex;
+    max-width:600px;
+    margin:0 auto;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    padding:14px;
+    font-size:14px;
+}
+
+.search-box button{
+    border:none;
+    background:#6366f1;
+    color:white;
+    padding:14px 24px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.trending{
+    margin-top:20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+}
+
+.trending span{
+    font-size:12px;
+}
+
+.trending a{
+    text-decoration:none;
+    background:#a4b6f0;
+    color:#0f172a;
+    padding:5px 10px;
+    border-radius:6px;
+    font-size:12px;
+}
+
+/* STATS */
+
+.stats{
+    padding:50px 0;
+    background:#f8fafc;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    text-align:center;
+}
+
+.stat-item h3{
+    font-size:28px;
+    color:#6366f1;
+}
+
+.stat-item p{
+    font-size:13px;
+}
+
+/* RESPONSIVE */
+
 @media(max-width:768px){
-  .nav{display:none}
-  .hero-title{font-size:40px}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
+
+.nav{
+    display:none;
+}
+
+.hero-title{
+    font-size:30px;
+}
+
+.hero-subtitle{
+    font-size:14px;
+}
+
+.search-box{
+    flex-direction:column;
+}
+
+.search-box button{
+    width:100%;
+}
+
+.stats-grid{
+    grid-template-columns:repeat(2,1fr);
+}
 }
