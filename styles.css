@@ -164,8 +164,8 @@ body{
 
 .search-box button{
     border:none;
-    background:#6366f1;
-    color:white;
+    background:#a1a1e2;
+    color:rgb(244, 138, 138);
     padding:14px 24px;
     font-size:14px;
     cursor:pointer;
