@@ -241,3 +241,25 @@ body{
     grid-template-columns:repeat(2,1fr);
 }
 }
+.logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    gap:10px;
+}
+
+.logo-img{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+}
+
+.logo-text{
+    font-size:24px;
+    font-weight:700;
+    color:#05112f;
+}
+
+.logo-text span{
+    color:#2563eb;
+}
