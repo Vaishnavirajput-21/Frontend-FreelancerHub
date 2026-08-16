@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Services - Freelancer Hub</title>
+
+  <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--primary:#6366f1;--primary-dark:#4f46e5;--dark:#0f172a;--gray:#64748b;--light:#f8fafc;--border:#e2e8f0}
+    body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--dark);background:var(--light)}
+    .container{max-width:1280px;margin:0 auto;padding:0 24px}
+    .header{background:white;height:72px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+    .nav-wrap{display:flex;justify-content:space-between;align-items:center;height:100%}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--primary),#8b5cf6);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px}
+    .logo-text{font-size:24px;font-weight:800;color:var(--dark);letter-spacing:-0.5px}
+    .logo-text span{color:var(--primary)}
+    .nav{display:flex;gap:32px;align-items:center}
+    .nav a{text-decoration:none;color:var(--gray);font-weight:600;font-size:15px}
+    .nav a.active{color:var(--primary)}
+    .auth{display:flex;gap:16px;align-items:center}
+    .signin{text-decoration:none;color:var(--dark);font-weight:600;font-size:15px}
+    .join{text-decoration:none;background:var(--primary);color:white;font-weight:700;padding:10px 22px;border-radius:12px;font-size:15px}
+    .page-header{padding:60px 0 40px;background:white;border-bottom:1px solid var(--border)}
+    .page-header h1{font-size:40px;font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+    .page-header p{font-size:18px;color:var(--gray)}
+    .filters{background:white;padding:24px 0;border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:50}
+    .filters-wrap{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+    .filter-group{display:flex;align-items:center;gap:8px}
+    .filter-group label{font-size:14px;font-weight:600;color:var(--gray)}
+    .filter-group select{padding:10px 16px;border:2px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;font-weight:600;cursor:pointer}
+    .results{padding:40px 0}
+    .results-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
+    .results-head h2{font-size:24px;font-weight:700}
+    .results-head p{color:var(--gray);font-size:15px}
+    .gigs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+    .gig-card{background:white;border:1px solid var(--border);border-radius:20px;overflow:hidden;text-decoration:none;color:var(--dark);transition:.3s}
+    .gig-card:hover{box-shadow:0 20px 60px rgba(0,0,0,0.08);transform:translateY(-4px)}
+    .gig-img{position:relative;height:200px;overflow:hidden}
+    .gig-img img{width:100%;height:100%;object-fit:cover}
+    .gig-badge{position:absolute;top:12px;left:12px;background:white;color:var(--primary);padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700}
+    .gig-body{padding:24px}
+    .gig-seller{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+    .gig-seller img{width:32px;height:32px;border-radius:50%}
+    .gig-seller-info h4{font-size:15px;font-weight:700}
+    .gig-seller-info p{font-size:13px;color:var(--gray)}
+    .gig-title{font-size:17px;font-weight:600;line-height:1.5;margin-bottom:16px;min-height:51px}
+    .gig-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+    .gig-tags span{background:var(--light);color:var(--gray);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:600}
+    .gig-footer{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border)}
+    .gig-rating{display:flex;align-items:center;gap:6px;font-size:15px;font-weight:700}
+    .gig-rating span{color:#fbbf24}
+    .gig-price{text-align:right}
+    .gig-price p{font-size:12px;color:var(--gray);font-weight:500}
+    .gig-price h4{font-size:20px;font-weight:800;color:var(--dark)}
+    @media(max-width:1024px){.nav{display:none}}
+    @media(max-width:640px){.gigs-grid{grid-template-columns:1fr}.filters-wrap{flex-direction:column;align-items:stretch}}
+  </style>
+  
+</head>
+<body>
+  <header class="header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">F</div>
+        <div class="logo-text">Freelancer<span>Hub</span></div>
+      </a>
+      <nav class="nav">
+        <a href="browser.html" class="active">Find Talent</a>
+        <a href="browse.html">Find Work</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#">Messages</a>
+      </nav>
+      <div class="auth">
+        <a href="login.html" class="signin">Log In</a>
+        <a href="signup.html" class="join">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Web Development Services</h1>
+      <p>Browse 1,247 expert developers ready to build your next project</p>
+    </div>
+  </section>
+
+  <section class="filters">
+    <div class="container">
+      <div class="filters-wrap">
+        <div class="filter-group">
+          <label>Category:</label>
+          <select>
+            <option>All Categories</option>
+            <option>Web Development</option>
+            <option>Mobile Apps</option>
+            <option>Design</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Budget:</label>
+          <select>
+            <option>Any Budget</option>
+            <option>Under ₹5,000</option>
+            <option>₹5,000 - ₹15,000</option>
+            <option>₹15,000+</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Delivery:</label>
+          <select>
+            <option>Any Time</option>
+            <option>24 Hours</option>
+            <option>3 Days</option>
+            <option>7 Days</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Sort:</label>
+          <select>
+            <option>Best Selling</option>
+            <option>Newest</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="results">
+    <div class="container">
+      <div class="results-head">
+        <h2>1,247 results</h2>
+        <p>Showing services in Web Development</p>
+      </div>
+      <div class="gigs-grid">
+        <a href="service-detail.html" class="gig-card">
+          <div class="gig-img">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600" alt="">
+            <div class="gig-badge">Top Rated</div>
+          </div>
+          <div class="gig-body">
+            <div class="gig-seller">
+              <img src="https://i.pravatar.cc/40?img=12" alt="">
+              <div class="gig-seller-info"><h4>Rajesh Kumar</h4><p>Full Stack Developer</p></div>
+            </div>
+            <h3 class="gig-title">I will build a modern responsive web app with React and Node.js</h3>
+            <div class="gig-tags">
+              <span>React</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+            <div class="gig-footer">
+              <div class="gig-rating"><span>★</span> 4.9 (234)</div>
+              <div class="gig-price"><p>Starting at</p><h4>₹18,000</h4></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="service-detail.html" class="gig-card">
+          <div class="gig-img">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600" alt="">
+          </div>
+          <div class="gig-body">
+            <div class="gig-seller">
+              <img src="https://i.pravatar.cc/40?img=33" alt="">
+              <div class="gig-seller-info"><h4>Ankit Verma</h4><p>WordPress Expert</p></div>
+            </div>
+            <h3 class="gig-title">I will create a professional WordPress website with Elementor Pro</h3>
+            <div class="gig-tags">
+              <span>WordPress</span><span>Elementor</span><span>PHP</span>
+            </div>
+            <div class="gig-footer">
+              <div class="gig-rating"><span>★</span> 4.8 (156)</div>
+              <div class="gig-price"><p>Starting at</p><h4>₹12,000</h4></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="service-detail.html" class="gig-card">
+          <div class="gig-img">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="">
+            <div class="gig-badge">Pro</div>
+          </div>
+          <div class="gig-body">
+            <div class="gig-seller">
+              <img src="https://i.pravatar.cc/40?img=45" alt="">
+              <div class="gig-seller-info"><h4>Neha Singh</h4><p>Mobile Developer</p></div>
+            </div>
+            <h3 class="gig-title">I will develop iOS and Android mobile app with Flutter</h3>
+            <div class="gig-tags">
+              <span>Flutter</span><span>Firebase</span><span>Dart</span>
+            </div>
+            <div class="gig-footer">
+              <div class="gig-rating"><span>★</span> 5.0 (89)</div>
+              <div class="gig-price"><p>Starting at</p><h4>₹35,000</h4></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="service-detail.html" class="gig-card">
+          <div class="gig-img">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600" alt="">
+          </div>
+          <div class="gig-body">
+            <div class="gig-seller">
+              <img src="https://i.pravatar.cc/40?img=20" alt="">
+              <div class="gig-seller-info"><h4>Vikram Rao</h4><p>Backend Developer</p></div>
+            </div>
+            <h3 class="gig-title">I will build secure REST API with Node.js and Express</h3>
+            <div class="gig-tags">
+              <span>Node.js</span><span>Express</span><span>PostgreSQL</span>
+            </div>
+            <div class="gig-footer">
+              <div class="gig-rating"><span>★</span> 4.7 (112)</div>
+              <div class="gig-price"><p>Starting at</p><h4>₹15,000</h4></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="service-detail.html" class="gig-card">
+          <div class="gig-img">
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600" alt="">
+            <div class="gig-badge">Top Rated</div>
+          </div>
+          <div class="gig-body">
+            <div class="gig-seller">
+              <img src="https://i.pravatar.cc/40?img=68" alt="">
+              <div class="gig-seller-info"><h4>Sneha Patel</h4><p>Shopify Expert</p></div>
+            </div>
+            <h3 class="gig-title">I will setup complete Shopify store with custom theme</h3>
+            <div class="gig-tags">
+              <span>Shopify</span><span>Liquid</span><span>E-commerce</span>
+            </div>
+            <div class="gig-footer">
+              <div class="gig-rating"><span>★</span> 4.9 (203)</div>
+              <div class="gig-price"><p>Starting at</p><h4>₹22,000</h4></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="service-detail.html" class="gig-card">
+          <div class="gig-img">
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600" alt="">
+          </div>
+          <div class="gig-body">
+            <div class="gig-seller">
+              <img src="https://i.pravatar.cc/40?img=51" alt="">
+              <div class="gig-seller-info"><h4>Rahul Mehta</h4><p>Python Developer</p></div>
+            </div>
+            <h3 class="gig-title">I will automate your tasks with Python scripts and web scraping</h3>
+            <div class="gig-tags">
+              <span>Python</span><span>Selenium</span><span>Automation</span>
+            </div>
+            <div class="gig-footer">
+              <div class="gig-rating"><span>★</span> 4.8 (67)</div>
+              <div class="gig-price"><p>Starting at</p><h4>₹8,000</h4></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
