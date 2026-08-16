@@ -1,0 +1,104 @@
+.projects-container {
+  min-height: 100vh;
+  padding: 50px 8%;
+  background: #f8fbff;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects-header h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.projects-header p {
+  color: #666;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.project-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-status {
+  background: #dff7e8;
+  color: #198754;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.project-budget {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.project-card h2 {
+  margin-bottom: 12px;
+}
+
+.project-description {
+  color: #666;
+  line-height: 1.6;
+  min-height: 70px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.skills span {
+  background: #eef4ff;
+  color: #0d6efd;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.project-client {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.view-project-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #0d6efd;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.view-project-btn:hover {
+  opacity: 0.9;
+}
+
+.projects-message {
+  text-align: center;
+  margin-top: 100px;
+}
